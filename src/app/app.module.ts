@@ -13,19 +13,23 @@ import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
   { 
     path: 'about', 
-    component: AboutComponent 
+    // component: AboutComponent,
+    loadChildren: './about/about.module#AboutModule'
   },
   { 
     path: 'contact',      
-    component: ContactComponent 
+    // component: ContactComponent,
+    loadChildren: './contact/contact.module#ContactModule'
   },
   { 
     path: 'home',      
-    component: HomeComponent 
+    // component: HomeComponent,
+    loadChildren: './home/home.module#HomeModule'
   },
   { 
     path: 'list', 
-    component: ListComponent, 
+    // component: ListComponent, 
+    loadChildren: './list/list.module#ListModule',
     data: { title: 'Heroes List' }
   },
   { 
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
   },
   { 
     path: '**', 
-    component: PageNotFoundComponent 
+    // component: PageNotFoundComponent,
+    loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule',
   }
 ];
 
@@ -44,11 +49,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TitleComponent,
-    ListComponent,
+    /*ListComponent,
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent*/
   ],
   imports: [
     BrowserModule,
