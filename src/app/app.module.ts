@@ -11,16 +11,14 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { AppCustomPreloader } from "./custom-preloading.strategy";
 import { appRoutes } from "./app.routes";
+import { CounterService } from "./counter.service";
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    /*ListComponent,
-    AboutComponent,
-    ContactComponent,
-    PageNotFoundComponent,
-    HomeComponent*/
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +28,8 @@ import { appRoutes } from "./app.routes";
     })
   ],
   providers: [
-    AppCustomPreloader
+    AppCustomPreloader,
+    CounterService
   ],
   bootstrap: [AppComponent]
 })

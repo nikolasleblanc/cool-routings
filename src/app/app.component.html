@@ -22,3 +22,12 @@
   </a>
 </nav>
 <router-outlet></router-outlet>
+<app-button 
+  text="Increment Counter"
+  (clicked)="counterService.increment()">
+</app-button>
+<app-button 
+  text="Decrement Counter"
+  (clicked)="counterService.decrement()">
+</app-button>
+{{ counterService.counter }}
