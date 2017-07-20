@@ -1,5 +1,6 @@
 {
   "primaryColor": "black",
   "secondaryColor": "red",
-  "apiUrl": "http://myapi.com"
+  "apiUrl": "http://myapi.com",
+  "showDetectChanges": false
 }

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnChanges, DoCheck } from '@angular/core';
 import { CounterService } from "./counter.service";
 import { environment } from "../environments/environment";
 import { ConfigService } from "./services/config.service";
@@ -6,16 +6,18 @@ import { ConfigService } from "./services/config.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None 
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
   title = 'app';
+  check = Date.now().toString();
 
   constructor(
     public counterService: CounterService,
     public configService: ConfigService
-  ) {
-    console.log(environment.api, configService.config$.subscribe(e => console.log(e)));
+  ) {}
+
+  ngDoCheck() {
+    this.check = Date.now().toString();
   }
 }

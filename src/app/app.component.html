@@ -1,3 +1,6 @@
+<app-check
+  [config$]="configService.config$">
+</app-check>
 <div *ngIf="(configService.config$ | async)?.loaded">
   <div 
     class="configDemo"
