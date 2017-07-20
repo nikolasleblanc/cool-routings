@@ -5,6 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { NumbersComponent } from "./numbers/numbers.component";
 import { LettersComponent } from "./letters/letters.component";
 import { SymbolsComponent } from "./symbols/symbols.component";
+import { SharedModule } from "../modules/shared/shared.module";
 
 const routes: Routes = [
   { path: '', component: ListComponent,
@@ -19,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
   declarations: [
     ListComponent,

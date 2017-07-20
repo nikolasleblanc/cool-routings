@@ -13,23 +13,23 @@ import { AppCustomPreloader } from "./custom-preloading.strategy";
 import { appRoutes } from "./app.routes";
 import { CounterService } from "./counter.service";
 import { ButtonComponent } from './button/button.component';
+import { SharedModule } from "./modules/shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent,
-    ButtonComponent
+    TitleComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     RouterModule.forRoot(appRoutes, { 
       // preloadingStrategy: PreloadAllModules 
       preloadingStrategy: AppCustomPreloader
     })
   ],
   providers: [
-    AppCustomPreloader,
-    CounterService
+    AppCustomPreloader
   ],
   bootstrap: [AppComponent]
 })
