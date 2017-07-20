@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.counter {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}

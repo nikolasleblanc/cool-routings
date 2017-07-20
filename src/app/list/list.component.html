@@ -19,12 +19,8 @@
   </a>
 </nav>
 <router-outlet></router-outlet>
-<app-button
-  text="Lazy Increment"
-  (clicked)="counterService.increment()">
-</app-button>
-<app-button
-  text="Lazy Decrement"
-  (clicked)="counterService.decrement()">
-</app-button>
-{{ counterService.counter }}
+<app-counter-buttons
+  [counter]="counterService.counter"
+  (increment)="counterService.increment()"
+  (decrement)="counterService.decrement()">
+</app-counter-buttons>

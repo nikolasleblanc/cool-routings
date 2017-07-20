@@ -1,0 +1,9 @@
+<app-button 
+  text="<<"
+  (clicked)="decrement.emit()">
+</app-button>
+<div class="counter">{{ counter }}</div>
+<app-button 
+  text=">>"
+  (clicked)="increment.emit()">
+</app-button>
