@@ -1,3 +1,11 @@
-nav a {
-  display: block;
+nav {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.configDemo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

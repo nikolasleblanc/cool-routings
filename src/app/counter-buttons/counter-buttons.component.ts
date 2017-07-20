@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class CounterButtonsComponent implements OnInit {
 
-  @Input() counter: number = 0;
+  @Input() counter$;
   @Output() increment: EventEmitter<null> = new EventEmitter();
   @Output() decrement: EventEmitter<null> = new EventEmitter();
 

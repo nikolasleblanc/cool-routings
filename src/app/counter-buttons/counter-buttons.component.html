@@ -2,7 +2,7 @@
   text="<<"
   (clicked)="decrement.emit()">
 </app-button>
-<div class="counter">{{ counter }}</div>
+<div class="counter">{{ counter$ | async }}</div>
 <app-button 
   text=">>"
   (clicked)="increment.emit()">

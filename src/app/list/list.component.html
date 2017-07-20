@@ -20,7 +20,7 @@
 </nav>
 <router-outlet></router-outlet>
 <app-counter-buttons
-  [counter]="counterService.counter"
+  [counter$]="counterService.counter$"
   (increment)="counterService.increment()"
   (decrement)="counterService.decrement()">
 </app-counter-buttons>
