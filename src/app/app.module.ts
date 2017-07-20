@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
@@ -9,12 +9,16 @@ import { ContactComponent } from "./contact/contact.component";
 import { ListComponent } from "./list/list.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { HomeComponent } from './home/home.component';
+import { AppCustomPreloader } from "./custom-preloading.strategy";
 
 const appRoutes: Routes = [
   { 
     path: 'about', 
     // component: AboutComponent,
-    loadChildren: './about/about.module#AboutModule'
+    loadChildren: './about/about.module#AboutModule',
+    data: {
+      preload: true
+    }
   },
   { 
     path: 'contact',      
@@ -57,9 +61,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, { 
+      // preloadingStrategy: PreloadAllModules 
+      preloadingStrategy: AppCustomPreloader
+    })
   ],
-  providers: [],
+  providers: [
+    AppCustomPreloader
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
