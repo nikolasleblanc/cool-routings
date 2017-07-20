@@ -3,17 +3,17 @@
 </p>
 <nav>
   <a 
-    routerLink="numbers" 
+    [routerLink]="['numbers', 'numbersParam']" 
     routerLinkActive="active">
     Numbers
   </a>
   <a 
-    routerLink="letters" 
+    [routerLink]="['letters', 'lettersParam']" 
     routerLinkActive="active">
     Letters
   </a>
   <a 
-    routerLink="symbols" 
+    [routerLink]="['symbols', 'symbolsParam']" 
     routerLinkActive="active">
     Symbols
   </a>

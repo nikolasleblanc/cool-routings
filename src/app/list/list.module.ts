@@ -10,9 +10,9 @@ import { SharedModule } from "../modules/shared/shared.module";
 const routes: Routes = [
   { path: '', component: ListComponent,
     children: [
-      { path: 'numbers', component: NumbersComponent },
-      { path: 'letters', component: LettersComponent },
-      { path: 'symbols', component: SymbolsComponent }
+      { path: 'numbers/:id', component: NumbersComponent },
+      { path: 'letters/:id', component: LettersComponent },
+      { path: 'symbols/:id', component: SymbolsComponent }
     ]
   }
 ];
